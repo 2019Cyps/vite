@@ -20,17 +20,17 @@ export default ({ mode }) => {
             })
         ],
         server: {
-            host: '0.0.0.0',
-            port: Number(env.VITE_APP_BASE_API),
-            open: true,
-            proxy: {
-                [env.VITE_APP_BASE_API]: {
-                    target: 'http://vapi.youlai.tech',
-                    changeOrigin: true,
-                    rewrite: path =>
-                        path.replace(new RegExp('^'+env.VITE_APP_BASE_API),'')
-                }
-            }
+            // host: '0.0.0.0',
+            // port: Number(env.VITE_APP_BASE_API),
+            // open: true,
+            // proxy: {
+            //     [env.VITE_APP_BASE_API]: {
+            //         target: 'http://vapi.youlai.tech',
+            //         changeOrigin: true,
+            //         rewrite: path =>
+            //             path.replace(new RegExp('^'+env.VITE_APP_BASE_API),'')
+            //     }
+            // }
         }
     })
 }
