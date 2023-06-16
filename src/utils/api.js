@@ -14,3 +14,9 @@ export function login(data) {
         data
     })
 }
+
+export function menuList() {
+    return request({
+        url:'/api/v1/menus'
+    })
+}

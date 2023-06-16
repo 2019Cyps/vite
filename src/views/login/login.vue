@@ -9,9 +9,10 @@
 <script setup lang="ts">
 import { useCounterStore } from "../../store/index";
 const counterStore = useCounterStore();
-import { getBanner,login } from '../../utils/api'
+import { getBanner, login } from '../../utils/api'
+import {useRouter} from 'vue-router'
 
-
+const router = useRouter()
 let username = ref('admin')
 let password = ref('123456')
 let code = ref('')
@@ -31,7 +32,10 @@ function submit() {
     }
     login(params).then(res => {
         if (res.data) {
-            localStorage.setItem('token',res.data.accessToken)
+            localStorage.setItem('token', res.data.accessToken)
+            router.push({
+                path:'/'
+            })
         }
     })
 }
