@@ -10,8 +10,20 @@ const routes = [
     },
     {
 		path: "/",
-		component: Layout,
-    }
+        component: Layout,
+        children: [
+            {
+                path: '/home',
+                name:'Home',
+                component: ()=> import("../views/home.vue"),
+            },
+            {
+                path: '/apidoc',
+                name:'ApiDoc',
+                component: ()=> import("../views/apidoc.vue"),
+            }
+        ]
+    },
 ];
 const router = createRouter({
 	history: createWebHashHistory(),

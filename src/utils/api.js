@@ -15,7 +15,7 @@ export function login(data) {
     })
 }
 
-export function menuList() {
+export function menuGetList() {
     return request({
         url:'/api/v1/menus'
     })

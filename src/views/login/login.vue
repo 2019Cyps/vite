@@ -34,7 +34,7 @@ function submit() {
         if (res.data) {
             localStorage.setItem('token', res.data.accessToken)
             router.push({
-                path:'/'
+                path:'/home'
             })
         }
     })
