@@ -35,13 +35,59 @@ const handleMenuClick = (item) => {
 function getTabs(val) {
     console.log('???' + val)
     if(val == '1'){
-        menuGetList().then(res => {
-            menuList.value = res.data
-            menuList.value.unshift({
-                name: '首页',
-                path:'/home'
-            })      
-        })
+        // menuGetList().then(res => {
+        //     menuList.value = res.data
+        //     menuList.value.unshift({
+        //         name: '首页',
+        //         path:'/home'
+        //     })
+        // })
+        menuList.value = [
+            {
+                name: 'CCTV+',
+                path:'1',
+                children: [
+                    {
+                        name: '乡村振兴',
+                        path:'1-1'
+                    },
+                    {
+                        name: '一带一路',
+                        path:'1-2'
+                    },
+                    {
+                        name: '直播中国',
+                        path:'1-3'
+                    },
+                    {
+                        name: '上海车展2023',
+                        path:'1-4'
+                    },
+                    {
+                        name: '大运会',
+                        path:'1-5'
+                    }
+                ]
+            },
+            {
+                name: '人民网',
+                path:'2',
+                children: [
+                    {
+                        name: '人民财评',
+                        path:'2-1'
+                    },
+                    {
+                        name: '数读中国',
+                        path:'2-2'
+                    },
+                    {
+                        name: '人民会客厅',
+                        path:'2-3'
+                    }
+                ]
+            }
+        ]
     } else if (val == '2') {
         menuList.value = [
             {

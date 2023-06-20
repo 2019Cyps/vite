@@ -4,6 +4,7 @@
             <template v-if="item.children && item.children.length>0">
                 <el-sub-menu :index="item.path">
                     <template #title>
+                        <el-icon><location /></el-icon>
                         <span>{{item.name}}</span>
                     </template>
                     <MenuTree :menu="item.children" :defaultActive="defaultActive" @clickItem="clickItemHandle(item)">
@@ -20,7 +21,9 @@
 </template>
 
 <script setup name="MenuTree">
-
+import {
+  Location,
+} from '@element-plus/icons-vue'
 defineProps({
     menu: {
         required: true,
