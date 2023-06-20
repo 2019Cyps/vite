@@ -33,7 +33,6 @@ defineProps({
 })
 
 const emit = defineEmits(["update-active-path", "clickItem"])
-
 const clickItemHandle = (item) => {
   emit("clickItem", item);
 };

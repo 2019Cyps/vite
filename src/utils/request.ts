@@ -12,7 +12,7 @@ service.interceptors.request.use(config => {
     config.url = import.meta.env.VITE_APP_BASE_URL + config.url // 动态url
 	return config;
 }, error => {
-Promise.reject(error);
+    return Promise.reject(error);
 });
 
 //3. 响应拦截器
@@ -21,6 +21,8 @@ service.interceptors.response.use(response => {
     return response.data;
 
 }, error => {
+    
+    ElMessage.error(error.response.data.msg)
     if (error.response.data.code == 'A0230') {   
         localStorage.removeItem('token')
     }
