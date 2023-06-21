@@ -33,7 +33,6 @@ const handleMenuClick = (item) => {
 };
 
 function getTabs(val) {
-    console.log('???' + val)
     if(val == '1'){
         // menuGetList().then(res => {
         //     menuList.value = res.data

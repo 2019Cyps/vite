@@ -13,6 +13,9 @@ import i18n from './language/index.js'
 
 import store from './store'
 
+import "videojs-markers";
+import "videojs-markers/dist/videojs.markers.css";
+
 let app = createApp(App);
 app.use(createPinia())
 app.use(ElementPlus)
